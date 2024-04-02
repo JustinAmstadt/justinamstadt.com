@@ -49,4 +49,4 @@ def submit_data():
         return jsonify({'error': 'Only POST requests are allowed'})
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run()
