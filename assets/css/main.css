@@ -408,13 +408,14 @@ blockquote {
 }
 
 .youtube {
-    background-image: url("../../images/banner.jpg");
+    /*background-image: url("../../images/banner.jpg");*/
     background-position: center center;
     background-size: cover;
-    height: 28em;
+    height: 38em;
     text-align: center;
     position: relative;
     width: 100%;
+    background: rgba(27, 27, 27, 0.75);
 }
 
 .youtube header {
@@ -422,8 +423,7 @@ blockquote {
     bottom: 0;
     left: 0;
     width: 100%;
-    background: #212121;
-    background: rgba(27, 27, 27, 0.75);
+    /*background: #212121;*/
     color: #fff;
     padding: 1.5em 0;
 }
@@ -431,8 +431,8 @@ blockquote {
 .youtube iframe {
     top: 0;
     left: 0;
-    width: 80%;
-    height: 20em;
+    width: 60%;
+    height: 25em;
 }
 
 /* Row */
