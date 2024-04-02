@@ -5,7 +5,7 @@ def computeWitnessProof(a: int, b: int, cwd: str = "") -> None:
     if os.path.exists(old_proof_path):
         os.remove(old_proof_path)
 
-    bash_command = f"zokrates compute-witness -a {a} {b}"
+    bash_command = f"/home/justin/.zokrates/bin/zokrates compute-witness -a {a} {b}"
 
     try:
         output = subprocess.check_output(bash_command, shell=True, text=True, cwd=cwd)
@@ -13,7 +13,7 @@ def computeWitnessProof(a: int, b: int, cwd: str = "") -> None:
         print("Error executing the command:", e)
         return
 
-    bash_command = "zokrates generate-proof"
+    bash_command = "/home/justin/.zokrates/bin/zokrates generate-proof"
 
     try:
         output = subprocess.check_output(bash_command, shell=True, text=True, cwd=cwd)

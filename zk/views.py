@@ -1,7 +1,26 @@
 import json
-import os
+import os, subprocess
 from django.http import JsonResponse
-from zokrates.zokrates import computeWitnessProof
+
+def computeWitnessProof(a: int, b: int, cwd: str = "") -> None:
+    old_proof_path = f"{cwd}/proof.json"
+    if os.path.exists(old_proof_path):
+        os.remove(old_proof_path)
+
+    bash_command = f"/home/justin/.zokrates/bin/zokrates compute-witness -a {a} {b}"
+
+    try:
+        output = subprocess.check_output(bash_command, shell=True, text=True, cwd=cwd)
+    except subprocess.CalledProcessError as e:
+        print("Error executing the command:", e)
+        return
+
+    bash_command = "/home/justin/.zokrates/bin/zokrates generate-proof"
+
+    try:
+        output = subprocess.check_output(bash_command, shell=True, text=True, cwd=cwd)
+    except subprocess.CalledProcessError as e:
+        print("Error executing the command:", e)
 
 def submit_data(request):
     if request.method == 'POST':
@@ -19,7 +38,7 @@ def submit_data(request):
         if not 0 <= b <= 10_000_000_000:
             return JsonResponse({'message': 'Variable B must be between 0 and 10,000,000,000'}, status=400)
 
-        zokrates_dir = "zokrates"
+        zokrates_dir = "zk"
         proof_file = os.path.join(zokrates_dir, "proof.json")
         computeWitnessProof(a, b, zokrates_dir)
 
