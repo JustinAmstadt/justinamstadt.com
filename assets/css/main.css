@@ -26,7 +26,11 @@ acronym,
 address,
 big,
 cite,
-code,
+code {
+    display: block; /* or block */
+    text-align: left; /* or center or right */
+    padding: 5px;
+}
 del,
 dfn,
 em,
@@ -99,6 +103,16 @@ video {
 
 .text-center {
     text-align: center;
+}
+
+code.container {
+    margin: 0 auto; /* Center the container horizontally */
+    width: fit-content; /* Set the container width to fit its content */
+    text-align: left; /* Align text within the container to the left */
+}
+
+form.form-padding {
+    padding: 10px;
 }
 
 article,
@@ -2216,6 +2230,12 @@ input[type="text"]:focus,
 input[type="text"],
 	input[type="password"],
 	input[type="email"] {
+    line-height: 1em;
+}
+
+input[type="text"],
+	input[type="a"],
+	input[type="b"] {
     line-height: 1em;
 }
 
