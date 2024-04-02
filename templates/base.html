@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+
+{% load static %}
+
+<html lang="en">
+    <head> 
+        <title>{% block title %}Website Header{% endblock %}</title>
+        <meta charset="utf-8"/> 
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no"/> 
+        <link rel="stylesheet" href="{% static 'css/main.css' %}">
+        <script src="{% static 'js/jquery.min.js' %}"></script>
+        <script src="{% static 'js/jquery.dropotron.min.js' %}"></script>
+        <script src="{% static 'js/browser.min.js' %}"></script>
+        <script src="{% static 'js/breakpoints.min.js' %}"></script>
+        <script src="{% static 'js/util.js' %}"></script>
+        <script src="{% static 'js/main.js' %}"></script>
+    </head>    
+
+    <body>
+        <main>
+            <div id="header"> 
+                <!-- Logo -->                 
+                <h1><a href="/" id="logo">Justin Amstadt</a></h1> 
+            {% block nav %}
+                <!-- Nav -->                 
+                <nav id="nav"> 
+                    <ul> 
+                        <li><a href="/">Home</a></li>                         
+                        <li> <a href="{% url 'zk' %}">ZK</a></li>
+                        <li> <a href="{% url 'opengl-projects' %}">OpenGL Projects</a></li>
+                        <li><a href="{% url 'japanese-tutoring' %}">Japanese Tutoring</a></li>
+                        <li><a href="{% url 'blog' %}">Blog</a></li>
+                        <li><a href="{% url 'programming-projects' %}">Programming Projects</a></li>
+                        <li><a href="{% url 'resume' %}">Resume</a></li>
+                    </ul>                     
+                </nav>                 
+            </div>    
+            {% endblock nav %}
+            {% block content %}
+
+            {% endblock %}
+        </main>
+    </body>
+
+</html>

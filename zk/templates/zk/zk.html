@@ -1,0 +1,85 @@
+{% extends "base.html" %}
+
+{% block title %}Home{% endblock%}
+
+{% block content %}
+{{block.super}}
+{% load static %}
+    <style>
+        code.container {
+            margin: 0 auto; /* Center the container horizontally */
+            width: fit-content; /* Set the container width to fit its content */
+            text-align: left; /* Align text within the container to the left */
+        }
+        .text-center {
+            text-align: center;
+        }
+        code {
+            display: block; /* or block */
+            text-align: left; /* or center or right */
+            padding: 5px;
+            padding-bottom: 30px;
+        }
+    </style>
+    <body class="is-preload"> 
+            <h1 class="text-center">Zero Knowledge</h1> 
+            <h2 class="text-center">ZoKrates Code</h2> 
+            <div>
+                <code class="container">
+                    def main(private field a, field b) {<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;assert(a * a == b);<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;return;<br>
+                    }
+                </code> 
+            </div>
+            <form id = "zkform" class = "form-padding"> 
+                {% csrf_token %}
+                <div class="row aln-center"> 
+                    <div class="col-6 col-12-mobilep"> 
+                        <input type="text" name="a" id="a" placeholder="A"/> 
+                    </div>                                     
+                    <div class="col-6 col-12-mobilep"> 
+                        <input type="text" name="b" id="b" placeholder="B"/> 
+                    </div>                                     
+                    <div class="col-12"> 
+                        <ul class="actions"> 
+                            <li>
+                                <input type="submit" class="button alt" value="Submit"/>
+                            </li>                                             
+                        </ul>                                         
+                    </div>                                     
+                </div>                                 
+            </form>                             
+            <p id="zk-output" class="text-center"></p>
+            <!-- Footer -->             
+            <h3 class="text-center">Contact me at justinamstadt@gmail.com</h3> 
+            <div id="footer"> 
+                <div class="container"> 
+                    <div class="row"> 
+</div>                     
+                </div>                 
+                <!-- Icons -->                 
+                <ul class="icons"> 
+                    <li></li>                     
+                    <li><a href="https://github.com/JustinAmstadt" class="icon brands fa-github"><span class="label">GitHub</span></a>
+                    </li>                     
+                    <li></li>                     
+                    <li></li>                     
+                </ul>                 
+                <!-- Copyright -->                 
+                <div class="copyright"> 
+                    <ul class="menu"> 
+                        <li>Design: <a href="http://html5up.net">HTML5 UP</a>
+                        </li>                         
+                    </ul>                     
+                </div>                 
+        </div>         
+        <script src="{% static 'js/jquery.min.js' %}"></script>
+        <script src="{% static 'js/jquery.dropotron.min.js' %}"></script>
+        <script src="{% static 'js/browser.min.js' %}"></script>
+        <script src="{% static 'js/breakpoints.min.js' %}"></script>
+        <script src="{% static 'js/util.js' %}"></script>
+        <script src="{% static 'js/main.js' %}"></script>
+        <script src="{% static 'js/zokrates.js' %}"></script>
+    </body>     
+{% endblock %}

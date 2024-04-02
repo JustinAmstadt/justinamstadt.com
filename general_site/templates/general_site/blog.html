@@ -1,0 +1,61 @@
+{% extends "base.html" %}
+
+{% block title %}Home{% endblock%}
+
+{% block content %}
+{{block.super}}
+{% load static %}
+    <body class="is-preload"> 
+        <div id="page-wrapper"> 
+            <!-- Main -->             
+            <section class="wrapper style1"> 
+                <div class="container"> 
+                    <div id="content"> 
+                        <!-- Content -->                         
+                        <article class="text-center"> 
+                            <header> 
+                                <h2 class="text-center">Japanese Learning Blog</h2> 
+                            </header>                             <a href="{% url 'focused-immersion' %}"><span class="image"><img src="{% static 'images/books-scaled.jpg'%}" alt="bookshelf full of books"/></span> 
+                            <h3>How to Learn Japanese – Focused Immersion</h3></a>
+                            <p>Have you ever tried learning Japanese and ultimately end up unable to put together the most basic of sentences? I have met people who have...</p><a href="{% url 'improve-vocabulary' %}"><span class="image"><img src="{% static 'images/dictionary-scaled.jpg'%}" alt="dictionary page"/></span>
+                            <h3>How to Improve Your Vocabulary</h3></a>
+                            <p>Let’s face it: Learning a language requires an insane amount of memorization. Japanese doubles down on that with the usual 10,000+ vocabulary words requirement plus...</p><a href="{% url 'background-immersion' %}"><span class="image"><img src="{% static 'images/headphones-scaled.jpg'%}" alt="headphones"/></span>
+                            <h3>How to Learn Japanese – Background Immersion</h3></a>
+                            <p>Are you someone that wants to learn Japanese but don’t feel like you have the time to do so? You’re not alone. When people normally...</p> 
+                        </article>                         
+                    </div>                     
+                </div>                 
+            </section>             
+            <!-- Footer -->             
+            <h3 class="text-center">Contact me at justinamstadt@gmail.com</h3> 
+            <div id="footer"> 
+                <div class="container"> 
+                    <div class="row"> 
+</div>                     
+                </div>                 
+                <!-- Icons -->                 
+                <ul class="icons"> 
+                    <li></li>                     
+                    <li><a href="https://github.com/JustinAmstadt" class="icon brands fa-github"><span class="label">GitHub</span></a>
+                    </li>                     
+                    <li></li>                     
+                    <li></li>                     
+                </ul>                 
+                <!-- Copyright -->                 
+                <div class="copyright"> 
+                    <ul class="menu"> 
+                        <li>Design: <a href="http://html5up.net">HTML5 UP</a>
+                        </li>                         
+                    </ul>                     
+                </div>                 
+            </div>             
+        </div>         
+        <!-- Scripts -->         
+        <script src="{% static 'js/jquery.min.js' %}"></script>
+        <script src="{% static 'js/jquery.dropotron.min.js' %}"></script>
+        <script src="{% static 'js/browser.min.js' %}"></script>
+        <script src="{% static 'js/breakpoints.min.js' %}"></script>
+        <script src="{% static 'js/util.js' %}"></script>
+        <script src="{% static 'js/main.js' %}"></script>
+    </body>     
+{% endblock %}

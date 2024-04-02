@@ -1,0 +1,108 @@
+{% extends "base.html" %}
+
+{% block title %}Home{% endblock%}
+
+{% block content %}
+{{block.super}}
+{% load static %}
+    <body class="is-preload"> 
+        <div id="page-wrapper"> 
+            <!-- Main -->             
+            <section class="wrapper style1"> 
+                <div class="container"> 
+                    <div id="content"> 
+                        <!-- Content -->                         
+                        <article> 
+                            <header> 
+                                <h2 class="text-center">Resume</h2> 
+                            </header>                             
+                            <h3>Programming Projects</h3>
+                            <ul>
+                                <li>Japanese Accent Reduction Tool Using AI (In production)</li>
+                                <li>Moving ocean with rain and fog generated with OpenGL in C++ (video on my website). More OpenGL projects are available on my website</li>
+                                 <li>Nethack-inspired 2D game in C++</li>                               <li>Wire simulator in Java</li>
+                                <li>My website made using with HTML and CSS</li>
+                                <li>Cryptocurrency trading simulator and real-time data collector in Python</li>
+                            </ul>
+                            <h3>Professional Summary</h3>
+                            <p>Beginning with my path to fluency in Japanese, I have continually sought out difficult subjects to learn and master in an efficient manner. This mindset has given me the ability to grow rapidly in the fields of Computer Graphics and Machine Learning while also leading me to start a thriving private Japanese tutoring business that I run solely. </p> 
+			    <p>My portfolio demonstrates my ability to learn difficult, brand new topics through hard work, smart thinking, and a calm mind in the face of an overwhelming amount of knowledge required to become proficient.</p>
+
+                            <h3>Education</h3> 
+                            <ul>
+                                <li>Majoring in Computer Science</li>
+				<li>I am fluent in Japanese (mostly self-taught)</li>
+                                <li>Spent 6 months in Tokyo in 2019 learning in a Japanese Language School</li>
+                                <li>Have strong experience in C++, Python, and Java with additional experience in HTML and CSS. I will use any language required to do what I need</li>
+                                <li>I use a dual boot system of Ubuntu and Windows 10 with Ubuntu being my primary OS </li>
+                                <li>GPA – 3.9 (4.0 in STEM classes)</li>
+                            </ul>                             
+                            <h3>Work Experience</h3> 
+                            <h4>AI-based Linguistic Feature Extraction University at Buffalo Internship</h4><span class="image"><img src="{% static 'images/UB_Poster.jpg'%}" alt="UB MDD Poster"/></span> 
+
+                            <ul>
+                                <li>I was a part of a research group under a professor for 10 weeks during the summer of 2023</li>
+                                <li>The goal of my project is to use AI-based methods to extract relevant information from speech data for the purpose of disease detection</li>
+                                <li>My specific role was Mispronunciation Detection and Diagnosis (MDD) with another undergrad as a partner</li>
+                                <li>I was responsible for training a replacement to do my job when I left</li>
+                                <li>A variety of data science techniques and machine learning models involving support vector machines, transformers, acoustic models, and forced-alignment were used as a part of the project</li>
+                            </ul>
+                            <h4>Private Online Japanese Tutor</h4>
+                            <ul>
+                                <li>I manage every aspect of my business alone</li>
+                                <li>My advertising is done online through different services and also through my website</li>
+                                <li>When a student contacts me, we discuss how they would like to be taught, their goals, etc. My goal is to make the student happy and satisfied with what they are receiving</li>
+                                <li>Students generally pay on a per-lesson basis electronically. All payments are monitored by me</li>
+                                <li>I managed a group lesson with three separate kids. Managing kids with separate schedules and work ethics was a challenging and rewarding work experience</li>
+                                <li>When lessons do not go to plan I have to improvise to provide an interesting and helpful lesson to my students</li>
+                                <li>Lessons happen at the same time every week as agreed upon unless otherwise notified. I require 24 hours notice of any cancellation. Students are sent a reminder email the day of the lesson</li>
+                                <li>Every student has a unique lesson plan due to differing goals and preferences in their learning method, but a student always starts with the basic writing system (kana) followed by basic grammar and other language learning advice</li>
+                            </ul>
+                            <h4>Helping with a Programming Judge</h4>
+                            <ul>
+                                <li>My teacher uses a custom judge that works similar to sites such as Leetcode and Hackerrank that I help him with</li>
+                                <li>My primary task is to solve problems on my own relating to data structures or other essential programming topics and make a similar problem for the judge</li>
+                                <li>I rewrite the problem I intend to upload to adjust for difficulty and clearness</li>
+                                <li>Using a Python script, I create 10 inputs in a csv file, feed it into a Java program, read the output of the Java program, and write the output onto the csv file while also generating the necessary files automatically</li>
+                                <li>For each problem I write a sample solution in both C++ and Java</li>
+                            </ul>
+                            <h3>Zero Knowledge Projects</h3> <a href="{% url 'zk' %}">Check out my Zero Knowledge Projects here</a>
+                            <h3>OpenGL Projects</h3> <a href="{% url 'opengl-projects' %}">Check out my OpenGL Projects here</a>
+                            <h3>Programming Projects</h3> <a href="{% url 'programming-projects' %}">Check out my Programming Projects here</a>
+                        </article>                         
+                    </div>                     
+                </div>                 
+            </section>             
+            <!-- Footer -->             
+            <h3 class="text-center">Contact me at justinamstadt@gmail.com</h3> 
+            <div id="footer"> 
+                <div class="container"> 
+                    <div class="row"> 
+</div>                     
+                </div>                 
+                <!-- Icons -->                 
+                <ul class="icons"> 
+                    <li></li>                     
+                    <li><a href="https://github.com/JustinAmstadt" class="icon brands fa-github"><span class="label">GitHub</span></a>
+                    </li>                     
+                    <li></li>                     
+                    <li></li>                     
+                </ul>                 
+                <!-- Copyright -->                 
+                <div class="copyright"> 
+                    <ul class="menu"> 
+                        <li>Design: <a href="http://html5up.net">HTML5 UP</a>
+                        </li>                         
+                    </ul>                     
+                </div>                 
+            </div>             
+        </div>         
+        <!-- Scripts -->         
+        <script src="{% static 'js/jquery.min.js' %}"></script>
+        <script src="{% static 'js/jquery.dropotron.min.js' %}"></script>
+        <script src="{% static 'js/browser.min.js' %}"></script>
+        <script src="{% static 'js/breakpoints.min.js' %}"></script>
+        <script src="{% static 'js/util.js' %}"></script>
+        <script src="{% static 'js/main.js' %}"></script>
+    </body>     
+{% endblock %}
