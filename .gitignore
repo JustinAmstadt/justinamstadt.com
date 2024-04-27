@@ -1,2 +1,5 @@
 .env
 logfile.log
+gunicorn_access.log
+gunicorn_error.log
+db.sqlite3

@@ -20,7 +20,8 @@ load_dotenv()
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 
-# Quick-start development settings - unsuitable for production
+# Quick-start sudo pip install Django
+# development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/5.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
@@ -29,7 +30,7 @@ SECRET_KEY = os.environ.get('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['justinamstadt.com', 'www.justinamstadt.com', 'localhost', '31.220.61.38']
+ALLOWED_HOSTS = ['justinamstadt.com', 'www.justinamstadt.com', 'localhost', '31.220.61.38', '127.0.0.1']
 
 # Application definition
 
@@ -42,6 +43,7 @@ INSTALLED_APPS = [
     "django.contrib.staticfiles",
     "general_site",
     "zk",
+    "percolation",
 ]
 
 MIDDLEWARE = [
