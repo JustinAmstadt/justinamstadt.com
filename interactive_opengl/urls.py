@@ -3,5 +3,5 @@ from . import views
 from django.views.generic import TemplateView
 
 urlpatterns = [
-    path('', TemplateView.as_view(template_name='interactive_opengl/page.html'), name='opengl-page'),
+    path('', TemplateView.as_view(template_name='interactive_opengl/cubeTest.html'), name='opengl-page'),
 ]
