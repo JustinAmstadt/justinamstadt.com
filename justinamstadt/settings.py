@@ -28,7 +28,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = os.environ.get('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = os.environ.get('SECRET_KEY')
 
 ALLOWED_HOSTS = ['justinamstadt.com', 'www.justinamstadt.com', 'localhost', '31.220.61.38', '127.0.0.1']
 
@@ -157,9 +157,12 @@ STATICFILES_DIRS = [
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
+SECURE_SSL_REDIRECT = False
+"""
 SECURE_HSTS_SECONDS = 31536000  # Set to a reasonable value, e.g., one year
 SECURE_HSTS_INCLUDE_SUBDOMAINS = True  # Optional, includes subdomains
 SECURE_SSL_REDIRECT = True
 SESSION_COOKIE_SECURE = True
 CSRF_COOKIE_SECURE = True
 SECURE_HSTS_PRELOAD = True
+"""

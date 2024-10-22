@@ -3,3 +3,4 @@ logfile.log
 gunicorn_access.log
 gunicorn_error.log
 db.sqlite3
+**/__pycache__
