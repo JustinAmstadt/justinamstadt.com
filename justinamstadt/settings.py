@@ -44,6 +44,7 @@ INSTALLED_APPS = [
     "general_site",
     "zk",
     "percolation",
+    "interactive_opengl",
 ]
 
 MIDDLEWARE = [
