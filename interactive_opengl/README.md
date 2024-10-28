@@ -14,16 +14,17 @@ Click [this link](https://justinamstadt.com/opengl-tutorials/) to see!
 
 - [Javascript Files](https://github.com/JustinAmstadt/justinamstadt.com/tree/main/static/js/interactive_opengl)
 
-Upcoming Goals:
+**Upcoming Goals:**
+
 - Be able to support multiple webgl canvases in the same page with their corresponding editors.
 - Fix the css issues currently present.
 - Add javascript editing support to teach important concepts such as draw calls, creating vertices/indices as done in the cube assignment, and any other important javascript calls you want to emphasize.
 
-**Potential Security Concern**
+**Potential Security Concern:**
 
 I am wondering what potential issues can arise by letting people edit code that directly affects the way their browser behaves. I have been thinking it's okay because all changes the user makes only affects their machine, but I want to raise this concern to ensure this isn't an issue.
 
-**My Idea for How This Would Work**
+**My Idea for How This Would Work:**
 
 I used [this website](https://cryptozombies.io/) this summer to get an introduction into Solidity and their whole learning model is to incrementally teach the user coding by having them add only 1 or 2 lines at a time before doing an automated string check to see if the new code is correct.
 
