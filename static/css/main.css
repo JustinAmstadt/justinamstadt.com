@@ -3494,3 +3494,16 @@ input[type="submit"].small,
         text-align: left;
     }
 }
+
+#vertex-editor #fragment-editor {
+    height: 100%;
+    border: 1px solid #ccc;
+}
+
+.editor-container {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    max-width: 512px;
+    flex: 1;
+}
