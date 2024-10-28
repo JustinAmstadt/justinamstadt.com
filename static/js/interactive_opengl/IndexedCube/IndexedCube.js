@@ -7,7 +7,10 @@
 
 class IndexedCube {
     constructor(gl, vertexShader, fragmentShader) {
-        vertexShader = `
+        this.vertexShader = vertexShader;
+        this.fragmentShader = fragmentShader;
+
+        this.vertexShader ||= `
             in vec4 aPosition;
 
             uniform mat4 P;
@@ -18,7 +21,7 @@ class IndexedCube {
             }
         `;
 
-        fragmentShader = `
+        this.fragmentShader ||= `
             out vec4 fragColor;
 
             void main()
@@ -30,7 +33,7 @@ class IndexedCube {
             } 
         `;
 
-        let vertices = new Float32Array([
+        this.vertices = new Float32Array([
             // Front
             0.5, 0.5, 0.5, // Top right
             -0.5, 0.5, 0.5, // Top left
@@ -44,7 +47,7 @@ class IndexedCube {
             -0.5, -0.5, -0.5 // Bottom left
         ]);
         
-        let indices = new Uint16Array([
+        this.indices = new Uint16Array([
             // Front face
             0, 1, 2,
             1, 3, 2,
@@ -69,21 +72,36 @@ class IndexedCube {
             0, 2, 4,
             2, 6, 4 
         ]);
-        
-        let program = new ShaderProgram(gl, this, vertexShader, fragmentShader);
-        let posAttribute = new Attribute(gl, program, "aPosition", vertices, 3, gl.FLOAT, false, 0, 0);
-        let indicesBuffer = new Indices(gl, indices);
+
+        this.initShader = () => {
+            if (this.program !== undefined) {
+                gl.deleteProgram(this.program.program);
+            }
+            this.program = new ShaderProgram(gl, this, this.vertexShader, this.fragmentShader);
+            this.posAttribute = new Attribute(gl, this.program, "aPosition", this.vertices, 3, gl.FLOAT, false, 0, 0);
+        }
+
+        this.indicesBuffer = new Indices(gl, this.indices);
+
+        this.initShader();
 
         this.draw = () => {
-            program.use();
+            this.program.use();
 
-            posAttribute.enable();
-            indicesBuffer.enable()
+            this.posAttribute.enable();
+            this.indicesBuffer.enable()
 
-            gl.drawElements(gl.TRIANGLES, indicesBuffer.count, indicesBuffer.type, 0);
+            gl.drawElements(gl.TRIANGLES, this.indicesBuffer.count, this.indicesBuffer.type, 0);
 
-            indicesBuffer.disable()
-            posAttribute.disable();
+            this.indicesBuffer.disable()
+            this.posAttribute.disable();
         };
+
+        this.updateShaderProgram = (vertexShader, fragmentShader) => {
+
+            this.vertexShader = vertexShader || this.vertexShader;
+            this.fragmentShader = fragmentShader || this.fragmentShader;
+            this.initShader();
+        }
     }
 };

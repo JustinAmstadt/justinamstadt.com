@@ -16,7 +16,7 @@ class ShaderProgram {
             let uniform = gl.getActiveUniform(program, i);
             let name = uniform.name;
             let location = gl.getUniformLocation(program, name);
-        
+
             switch (uniform.type) {
                 case gl.FLOAT:
                     uniformFuncs.push(() => gl.uniform1f(location, object[name]));
@@ -29,8 +29,6 @@ class ShaderProgram {
                 default:
                     console.log("Unknown uniform type " + uniform.type);
             }
-
-            object[name] = undefined;
         }
 
         this.program = program;

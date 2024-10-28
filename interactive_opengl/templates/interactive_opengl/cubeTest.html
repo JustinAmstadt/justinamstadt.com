@@ -5,21 +5,21 @@
 {% block content %}
 {{block.super}}
 {% load static %}
-
     <body class="is-preload">
         <canvas id="webgl-canvas" width="512" height="512"></canvas>
+        <div id="vertex-editor" style="height: 512px; width: 512px;"></div>
+        <div id="fragment-editor" style="height: 512px; width: 512px;"></div>
+        <button id="new-code-button">Get Content</button>
         <!-- Footer -->             
         <h3 class="text-center">Contact me at justinamstadt@gmail.com</h3> 
         <div id="footer"> 
             <div class="container"> 
-                <div class="row"> 
-</div>                     
+                <div class="row"></div>                     
             </div>                 
             <!-- Icons -->                 
             <ul class="icons"> 
                 <li></li>                     
-                <li><a href="https://github.com/JustinAmstadt" class="icon brands fa-github"><span class="label">GitHub</span></a>
-                </li>                     
+                <li><a href="https://github.com/JustinAmstadt" class="icon brands fa-github"><span class="label">GitHub</span></a></li>                     
                 <li></li>                     
                 <li></li>                     
             </ul>                 
@@ -30,56 +30,42 @@
                     </li>                         
                 </ul>                     
             </div>                 
-            </div>             
+        </div>             
+
+
+        <script src="{% static 'js/interactive_opengl/IndexedCube/CubeMainLoop.js' %}"></script>
+        <script src="{% static 'js/interactive_opengl/IndexedCube/IndexedCube.js' %}"></script>
+        <script src="{% static 'js/interactive_opengl/IndexedCube/Common/Helpers.js' %}"></script>
+        <script src="{% static 'js/interactive_opengl/IndexedCube/Common/initShaders.js' %}"></script>
+        <script src="{% static 'js/interactive_opengl/IndexedCube/Common/MatrixStack.js' %}"></script>
+        <script src="{% static 'js/interactive_opengl/IndexedCube/Common/MV.js' %}"></script>
+        <script src="{% static 'js/interactive_opengl/IndexedCube/Common/Axes.js' %}"></script>
+        <script src="{% static 'js/interactive_opengl/UseAceEditor.js' %}"></script>
+
 
         <script>
-            window.onload = () => {
-                let canvas = document.getElementById("webgl-canvas");
-                let gl = canvas.getContext("webgl2");
+            let vertexShader = 
+`in vec4 aPosition;
 
-                gl.clearColor(0.2, 0.2, 0.2, 1.0);
-                gl.enable(gl.DEPTH_TEST);
+uniform mat4 P;
+uniform mat4 MV;
 
-                let cube = new IndexedCube(gl);
-                let axes = new Axes(gl);
-                let ms = new MatrixStack;
+void main() {
+    gl_Position = P * MV * aPosition;
+}`
+            let fragmentShader = 
+`out vec4 fragColor;
 
-                let near = 2.0;
-                let far = 4.0;
-                cube.P = perspective(60.0, 1.0, near, far);
-                axes.P = cube.P;
+void main()
+{
+    const vec4 frontColor = vec4(0.0, 1.0, 1.0, 1.0);
+    const vec4 backColor = vec4(1.0, 0.0, 0.0, 1.0);
 
-                ms.translate(0, 0, -0.5*(near + far));
-
-                let angle = 0.0;
-
-                let render = () => {
-                    gl.clear(gl.COLOR_BUFFER_BIT|gl.DEPTH_BUFFER_BIT);
-
-                    angle += 1.0;
-                    angle %= 360.0;
-
-                    ms.push();
-                    ms.rotate(angle, [1, 1, 0]);
-                    cube.MV = ms.current();
-                    cube.draw();
-
-                    axes.MV = ms.current();
-                    axes.draw();
-                    ms.pop();
-
-                    requestAnimationFrame(render);
-                };
-
-                render();
-            };
+    fragColor = gl_FrontFacing ? frontColor : backColor;
+} `
+            loadAceEditor('glsl', vertexShader, "vertex-editor");
+            loadAceEditor('glsl', fragmentShader, "fragment-editor");
+            document.getElementById('new-code-button').onclick = () => updateShaderProgram(getEditorContent("vertex-editor"), getEditorContent("fragment-editor"))
         </script>
-
-        <script src="{% static 'js/interactive_opengl/IndexedCube.js' %}"></script>
-        <script src="{% static 'js/interactive_opengl/Common/Helpers.js' %}"></script>
-        <script src="{% static 'js/interactive_opengl/Common/initShaders.js' %}"></script>
-        <script src="{% static 'js/interactive_opengl/Common/MatrixStack.js' %}"></script>
-        <script src="{% static 'js/interactive_opengl/Common/MV.js' %}"></script>
-        <script src="{% static 'js/interactive_opengl/Common/Axes.js' %}"></script>
     </body>
 {% endblock %}
