@@ -7,5 +7,5 @@ docker build -t justinamstadt .
 ## Run Docker Container
 
 ```bash
-docker run -p 8000:8000 justinamstadt
+docker compose up
 ```

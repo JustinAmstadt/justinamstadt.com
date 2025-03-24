@@ -2,7 +2,7 @@
 FROM python:3.12.4-slim
 
 # Step 2: Set environment variables
-ENV PYTHONUNBUFFERED 1
+ENV PYTHONUNBUFFERED=1
 
 # Step 3: Set the working directory inside the container
 WORKDIR /app
