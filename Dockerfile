@@ -28,4 +28,4 @@ COPY . /app/
 EXPOSE 8000
 
 # Step 8: Run migrations automatically and then start the server
-CMD ["sh", "-c", "python manage.py migrate && python manage.py runserver 0.0.0.0:8000"]
+CMD ["sh", "-c", "python manage.py collectstatic --noinput && python manage.py runserver 0.0.0.0:8000"]

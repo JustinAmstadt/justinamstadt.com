@@ -1,8 +1,7 @@
-version: '3'
 services:
   web:
-    image: justinamstadt/justinamstadt.com
+    build: .
     env_file:
       - .env
     ports:
-      - "8000:80"
+      - "80:8000"

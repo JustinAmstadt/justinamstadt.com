@@ -5,3 +5,5 @@ gunicorn_error.log
 db.sqlite3
 **/__pycache__
 venv
+docker-compose.override.yml
+staticfiles/

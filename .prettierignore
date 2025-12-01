@@ -1,0 +1,11 @@
+# Ignore everything by default
+*
+
+# But allow HTML files
+!*.html
+!**/*.html
+
+# Ignore directories
+node_modules/
+staticfiles/
+venv/

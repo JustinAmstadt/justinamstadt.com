@@ -7,5 +7,5 @@ docker build -t justinamstadt .
 ## Run Docker Container
 
 ```bash
-docker compose up
+docker compose up --build -d
 ```
