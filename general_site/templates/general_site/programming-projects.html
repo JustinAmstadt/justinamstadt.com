@@ -3,113 +3,113 @@
 {% block title %}Programming Projects{% endblock%}
 
 {% block content %}
-{{block.super}}
-{% load static %}
-    <body class="is-preload"> 
-        <div id="page-wrapper"> 
+  {{block.super}}
+  {% load static %}
+  <body class="is-preload">
+    <div id="page-wrapper">
             <!-- Main -->             
-            <section class="wrapper style1"> 
-                <div class="container"> 
-                    <div id="content"> 
+      <section class="wrapper style1">
+        <div class="container">
+          <div id="content">
                         <!-- Content -->                         
-                        <article> 
-                            <header>
-                                <h2 class="text-center">Programming Projects</h2>
-                            </header>
-                            <h3>Cryptocurrency Algorithmic Trading Simulator + Cryptocurrency Price Data Collector</h3> 
-                            <ul>
-                                <li>Written in Python and uses the Pandas library heavily</li>
-                                <li>Various strategies can be implemented using the trading simulator</li>
-                                <li>Through making the data collector, I learned how to build programs that can run indefinitely</li>
-                                <li>The data collection runs on a Raspberry Pi, so I learned how to use the ssh and scp commands in Ubuntu Linux</li>
-                            </ul>                             
+            <article>
+              <header>
+                <h2 class="text-center">Programming Projects</h2>
+              </header>
+              <h3>Cryptocurrency Algorithmic Trading Simulator + Cryptocurrency Price Data Collector</h3>
+              <ul>
+                <li>Written in Python and uses the Pandas library heavily</li>
+                <li>Various strategies can be implemented using the trading simulator</li>
+                <li>Through making the data collector, I learned how to build programs that can run indefinitely</li>
+                <li>The data collection runs on a Raspberry Pi, so I learned how to use the ssh and scp commands in Ubuntu Linux</li>
+              </ul>
 
-                            <div>
-                                <h3>Japan Lang</h3><span class="image"><img src="{% static 'images/JapanLang-add-card.png'%}" alt="Japan Lang add card page"/></span> 
-                                <ul>
-                                    <li>Japanese learning website built with Django and React</li>
-                                    <li>Uses a simple SRS algorithm to help users learn vocabulary</li>
-                                    <li>Each textbook page is used to add cards to the user's deck</li>
-                                </ul>
-                            </div>
+              <div>
+                <h3>Japan Lang</h3><span class="image"><img src="{% static 'images/JapanLang-add-card.png'%}" alt="Japan Lang add card page"/></span>
+                <ul>
+                  <li>Japanese learning website built with Django and React</li>
+                  <li>Uses a simple SRS algorithm to help users learn vocabulary</li>
+                  <li>Each textbook page is used to add cards to the user's deck</li>
+                </ul>
+              </div>
 
-                            <div>
-                                <h3>Trash in Ocean Simulation</h3>
-                                <iframe width="700" height="394" src="https://www.youtube.com/embed/QTSEMFrZSWY?rel=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-                                <ul>
-                                    <li>Written in C# and Unity</li>
-                                    <li>Simulates the movement of trash in the ocean using publicly available data</li>
-                                </ul>
-                            </div>
+              <div>
+                <h3>Trash in Ocean Simulation</h3>
+                <iframe width="700" height="394" src="https://www.youtube.com/embed/QTSEMFrZSWY?rel=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                <ul>
+                  <li>Written in C# and Unity</li>
+                  <li>Simulates the movement of trash in the ocean using publicly available data</li>
+                </ul>
+              </div>
 
-                            <div>
-                                <h3>Real-time GPU-accelerated Ray Tracing</h3>
-                                <iframe width="700" height="394" src="https://www.youtube.com/embed/ihBOMLIr9Lc?rel=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-                                <ul>
-                                    <li>Written using OpenGL Compute Shaders</li>
-                                    <li>Ray traces a sphere moving in real time with GPU hardware acceleration</li>
-                                </ul>
-                            </div>
+              <div>
+                <h3>Real-time GPU-accelerated Ray Tracing</h3>
+                <iframe width="700" height="394" src="https://www.youtube.com/embed/ihBOMLIr9Lc?rel=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                <ul>
+                  <li>Written using OpenGL Compute Shaders</li>
+                  <li>Ray traces a sphere moving in real time with GPU hardware acceleration</li>
+                </ul>
+              </div>
 
-                            <div>
-                                <h3>Multiplayer Game Running on the Sui Blockchain</h3>
-                                <iframe width="700" height="394" src="https://www.youtube.com/embed/7waHnUrnZgI?rel=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-                                <ul>
-                                    <li>Multiplayer game that runs on the Sui blockchain</li>
-                                    <li>Despenses an NFT to the winning team at the end of the game</li>
-                                    <li>Requires both a Sui Move contract that handles the game logic and a Typescript client for players to interact with</li>
-                                </ul>
-                            </div>
+              <div>
+                <h3>Multiplayer Game Running on the Sui Blockchain</h3>
+                <iframe width="700" height="394" src="https://www.youtube.com/embed/7waHnUrnZgI?rel=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                <ul>
+                  <li>Multiplayer game that runs on the Sui blockchain</li>
+                  <li>Despenses an NFT to the winning team at the end of the game</li>
+                  <li>Requires both a Sui Move contract that handles the game logic and a Typescript client for players to interact with</li>
+                </ul>
+              </div>
 
-                            <span class="image featured"></span>
+              <span class="image featured"></span>
 
-                            <h3>Wire Simulator</h3><span class="image"><img src="{% static 'images/wire simulator.jpg'%}" alt="wire simulator game"/></span> 
-                            <ul>
-                                <li>Written in Java using the libgdx library to help build geometry and create a window</li>
-                                <li>Uses a coordinate system for an infinitely expanding grid</li>
-                                <li>Contains a fully functional custom made hotbar</li>
-                            </ul>
-                            <h3>2D Game in the Nethack Style</h3> <span class="image"><img src="{% static 'images/nethack.png'%}" alt="wire simulator game"/></span> 
-                            <ul>
-                                <li>Written in C++ using SDL2, a game library</li>
-                                <li>Has a well designed code structure that takes full advantage of inheritance and polymorphism</li>
-                                <li>Contains custom-made dungeon rooms that can be easily created using custom syntax in a separate text file</li>
-                                <li>Automatically generates a 9x9 dungeon with a new dungeon layout each time</li>
-                            </ul>                             
-                        </article>                         
-                    </div>                     
-                </div>                 
-            </section>             
+              <h3>Wire Simulator</h3><span class="image"><img src="{% static 'images/wire simulator.jpg'%}" alt="wire simulator game"/></span>
+              <ul>
+                <li>Written in Java using the libgdx library to help build geometry and create a window</li>
+                <li>Uses a coordinate system for an infinitely expanding grid</li>
+                <li>Contains a fully functional custom made hotbar</li>
+              </ul>
+              <h3>2D Game in the Nethack Style</h3> <span class="image"><img src="{% static 'images/nethack.png'%}" alt="wire simulator game"/></span>
+              <ul>
+                <li>Written in C++ using SDL2, a game library</li>
+                <li>Has a well designed code structure that takes full advantage of inheritance and polymorphism</li>
+                <li>Contains custom-made dungeon rooms that can be easily created using custom syntax in a separate text file</li>
+                <li>Automatically generates a 9x9 dungeon with a new dungeon layout each time</li>
+              </ul>
+            </article>
+          </div>
+        </div>
+      </section>
             <!-- Footer -->             
-            <h3 class="text-center">Contact me at justinamstadt@gmail.com</h3> 
-            <div id="footer"> 
-                <div class="container"> 
-                    <div class="row"> 
-</div>                     
-                </div>                 
+      <h3 class="text-center">Contact me at justinamstadt@gmail.com</h3>
+      <div id="footer">
+        <div class="container">
+          <div class="row">
+          </div>
+        </div>
                 <!-- Icons -->                 
-                <ul class="icons"> 
-                    <li></li>                     
-                    <li><a href="https://github.com/JustinAmstadt" class="icon brands fa-github"><span class="label">GitHub</span></a>
-                    </li>                     
-                    <li></li>                     
-                    <li></li>                     
-                </ul>                 
+        <ul class="icons">
+          <li></li>
+          <li><a href="https://github.com/JustinAmstadt" class="icon brands fa-github"><span class="label">GitHub</span></a>
+          </li>
+          <li></li>
+          <li></li>
+        </ul>
                 <!-- Copyright -->                 
-                <div class="copyright"> 
-                    <ul class="menu"> 
-                        <li>Design: <a href="http://html5up.net">HTML5 UP</a>
-                        </li>                         
-                    </ul>                     
-                </div>                 
-            </div>             
-        </div>         
+        <div class="copyright">
+          <ul class="menu">
+            <li>Design: <a href="http://html5up.net">HTML5 UP</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
         <!-- Scripts -->         
-        <script src="{% static 'js/jquery.min.js' %}"></script>
-        <script src="{% static 'js/jquery.dropotron.min.js' %}"></script>
-        <script src="{% static 'js/browser.min.js' %}"></script>
-        <script src="{% static 'js/breakpoints.min.js' %}"></script>
-        <script src="{% static 'js/util.js' %}"></script>
-        <script src="{% static 'js/main.js' %}"></script>
-    </body>     
+    <script src="{% static 'js/jquery.min.js' %}"></script>
+    <script src="{% static 'js/jquery.dropotron.min.js' %}"></script>
+    <script src="{% static 'js/browser.min.js' %}"></script>
+    <script src="{% static 'js/breakpoints.min.js' %}"></script>
+    <script src="{% static 'js/util.js' %}"></script>
+    <script src="{% static 'js/main.js' %}"></script>
+  </body>
 {% endblock %}

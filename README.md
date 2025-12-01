@@ -9,3 +9,5 @@ docker build -t justinamstadt .
 ```bash
 docker compose up --build -d
 ```
+
+## Pre

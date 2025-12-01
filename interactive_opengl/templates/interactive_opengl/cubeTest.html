@@ -3,51 +3,51 @@
 {% block title %}cubeTest{% endblock%}
 
 {% block content %}
-{{block.super}}
-{% load static %}
-    <body class="is-preload">
-        <canvas id="webgl-canvas" width="512" height="512"></canvas>
-        <div class="editor-container">
-            <div id="vertex-editor" style="height: 512px; width: 512px;"></div>
-            <div id="fragment-editor" style="height: 512px; width: 512px;"></div>
-        </div>
-        <button id="new-code-button">Update WebGL</button>
+  {{block.super}}
+  {% load static %}
+  <body class="is-preload">
+    <canvas id="webgl-canvas" width="512" height="512"></canvas>
+    <div class="editor-container">
+      <div id="vertex-editor" style="height: 512px; width: 512px;"></div>
+      <div id="fragment-editor" style="height: 512px; width: 512px;"></div>
+    </div>
+    <button id="new-code-button">Update WebGL</button>
         <!-- Footer -->             
-        <h3 class="text-center">Contact me at justinamstadt@gmail.com</h3> 
-        <div id="footer"> 
-            <div class="container"> 
-                <div class="row"></div>                     
-            </div>                 
+    <h3 class="text-center">Contact me at justinamstadt@gmail.com</h3>
+    <div id="footer">
+      <div class="container">
+        <div class="row"></div>
+      </div>
             <!-- Icons -->                 
-            <ul class="icons"> 
-                <li></li>                     
-                <li><a href="https://github.com/JustinAmstadt" class="icon brands fa-github"><span class="label">GitHub</span></a></li>                     
-                <li></li>                     
-                <li></li>                     
-            </ul>                 
+      <ul class="icons">
+        <li></li>
+        <li><a href="https://github.com/JustinAmstadt" class="icon brands fa-github"><span class="label">GitHub</span></a></li>
+        <li></li>
+        <li></li>
+      </ul>
             <!-- Copyright -->                 
-            <div class="copyright"> 
-                <ul class="menu"> 
-                    <li>Design: <a href="http://html5up.net">HTML5 UP</a>
-                    </li>                         
-                </ul>                     
-            </div>                 
-        </div>             
+      <div class="copyright">
+        <ul class="menu">
+          <li>Design: <a href="http://html5up.net">HTML5 UP</a>
+          </li>
+        </ul>
+      </div>
+    </div>
 
 
-        <script src="{% static 'js/interactive_opengl/IndexedCube/CubeMainLoop.js' %}"></script>
-        <script src="{% static 'js/interactive_opengl/IndexedCube/IndexedCube.js' %}"></script>
-        <script src="{% static 'js/interactive_opengl/IndexedCube/Common/Helpers.js' %}"></script>
-        <script src="{% static 'js/interactive_opengl/IndexedCube/Common/initShaders.js' %}"></script>
-        <script src="{% static 'js/interactive_opengl/IndexedCube/Common/MatrixStack.js' %}"></script>
-        <script src="{% static 'js/interactive_opengl/IndexedCube/Common/MV.js' %}"></script>
-        <script src="{% static 'js/interactive_opengl/IndexedCube/Common/Axes.js' %}"></script>
-        <script src="{% static 'js/interactive_opengl/UseAceEditor.js' %}"></script>
+    <script src="{% static 'js/interactive_opengl/IndexedCube/CubeMainLoop.js' %}"></script>
+    <script src="{% static 'js/interactive_opengl/IndexedCube/IndexedCube.js' %}"></script>
+    <script src="{% static 'js/interactive_opengl/IndexedCube/Common/Helpers.js' %}"></script>
+    <script src="{% static 'js/interactive_opengl/IndexedCube/Common/initShaders.js' %}"></script>
+    <script src="{% static 'js/interactive_opengl/IndexedCube/Common/MatrixStack.js' %}"></script>
+    <script src="{% static 'js/interactive_opengl/IndexedCube/Common/MV.js' %}"></script>
+    <script src="{% static 'js/interactive_opengl/IndexedCube/Common/Axes.js' %}"></script>
+    <script src="{% static 'js/interactive_opengl/UseAceEditor.js' %}"></script>
 
 
-        <script>
-            let vertexShader = 
-`in vec4 aPosition;
+    <script>
+      let vertexShader =
+        `in vec4 aPosition;
 
 uniform mat4 P;
 uniform mat4 MV;
@@ -55,8 +55,8 @@ uniform mat4 MV;
 void main() {
     gl_Position = P * MV * aPosition;
 }`
-            let fragmentShader = 
-`out vec4 fragColor;
+      let fragmentShader =
+        `out vec4 fragColor;
 
 void main()
 {
@@ -65,9 +65,9 @@ void main()
 
     fragColor = gl_FrontFacing ? frontColor : backColor;
 } `
-            loadAceEditor('glsl', vertexShader, "vertex-editor");
-            loadAceEditor('glsl', fragmentShader, "fragment-editor");
-            document.getElementById('new-code-button').onclick = () => updateShaderProgram(getEditorContent("vertex-editor"), getEditorContent("fragment-editor"))
-        </script>
-    </body>
+      loadAceEditor('glsl', vertexShader, "vertex-editor");
+      loadAceEditor('glsl', fragmentShader, "fragment-editor");
+      document.getElementById('new-code-button').onclick = () => updateShaderProgram(getEditorContent("vertex-editor"), getEditorContent("fragment-editor"))
+    </script>
+  </body>
 {% endblock %}
