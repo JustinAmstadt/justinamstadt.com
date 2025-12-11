@@ -6,3 +6,4 @@ sqlparse==0.5.3
 whitenoise==6.8.2
 djhtml==3.0.10
 black==25.11.0
+django-browser-reload==1.18.0
