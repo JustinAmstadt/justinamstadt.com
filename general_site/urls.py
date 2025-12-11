@@ -50,4 +50,11 @@ urlpatterns = [
         ),
         name="focused-immersion",
     ),
+    path(
+        "hiragana-quiz",
+        TemplateView.as_view(
+            template_name="general_site/hiragana-quiz.html"
+        ),
+        name="hiragana-quiz",
+    ),
 ]

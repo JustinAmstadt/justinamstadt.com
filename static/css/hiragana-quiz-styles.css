@@ -1,0 +1,35 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Courier New', Courier, monospace;
+    box-sizing: border-box;
+}
+
+h1 {
+    font-size: 4rem;
+    text-align: center;
+    margin: 2rem;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    padding: 6rem;
+}
+
+.hiragana {
+    font-size: 6rem;
+    padding: 24px;
+    padding-left: 40px;
+    padding-right: 40px;
+    margin: 12px;
+    background-color: aqua;
+    border-radius: 6px;
+}
+
+.romaji {
+    font-size: 2rem;
+    padding: 3rem;
+    margin: 1.5rem;
+    border-radius: 6px;
+}
